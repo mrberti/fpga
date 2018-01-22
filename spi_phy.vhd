@@ -346,7 +346,6 @@ begin
                 
             case spi_state is
                 when SPI_IDLE =>
-                    busy <= '0';
                     miso <= 'Z';
                     -- while idling, constantly latch in data
                     cpol_d <= cpol;
@@ -364,7 +363,6 @@ begin
                     
                 when SPI_TRANSCEIVING =>
                     -- set signals
-                    busy <= '1';
                     rx_valid <= '0';
                     
                     if     (sck_d = (1 => cpol_d, 0 => not cpol_d) and cpha_d = '0') 

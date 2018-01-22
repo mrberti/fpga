@@ -48,7 +48,7 @@ entity top is
         
         -- PMOD OLEDrgb
         CS, MOSI, SCK, D_C, RES, VCCEN, PMODEN : out STD_LOGIC;
-        MISO : in STD_LOGIC;
+        MISO : in STD_LOGIC := 'Z';
         
         -- RS232
         RsRx : in STD_LOGIC;
